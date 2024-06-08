@@ -61,7 +61,7 @@ func (d Dataset[T, D]) Query(query string) (*QueryResult[T], error) {
 	// as field accessors might make things more complicated.
 	slices.SortStableFunc(result, less)
 	if plan.Limit == 0 {
-		plan.Limit = 20
+		plan.Limit = 10000
 	}
 	if plan.Limit >= len(result) {
 		plan.Limit = len(result)
